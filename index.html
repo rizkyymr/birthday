@@ -484,6 +484,9 @@
 </section>
 
 <script>
+  // ── State Management ──
+  let currentState = 'cake'; // 'cake' or 'wish'
+
   // ── Petals ──
   (function() {
     const colors = ['#f5ccd4','#e8a0b0','#fde0e8','#f0d080','#fad4de'];
@@ -511,7 +514,7 @@
     const now  = new Date();
     const diff = target - now;
 
-    if (diff <= 0) {
+    if (diff <= 0 && currentState === 'cake') {
       document.getElementById('countdown-section').style.display = 'none';
       document.getElementById('cake-section').classList.add('visible');
       return;
@@ -528,11 +531,22 @@
     document.getElementById('cd-seconds').textContent = String(seconds).padStart(2,'0');
   }
 
+  // ── Initialize state based on countdown ──
+  const now = new Date();
+  if (now >= target) {
+    currentState = 'cake';
+    document.getElementById('countdown-section').style.display = 'none';
+    document.getElementById('cake-section').classList.add('visible');
+  }
+
   updateCountdown();
   setInterval(updateCountdown, 1000);
 
   // ── Blow Candles ──
   function blowCandles() {
+    if (currentState === 'wish') return; // Prevent multiple triggers
+    currentState = 'wish'; // Lock to prevent accidental resets
+
     const flames = document.querySelectorAll('.candle-flame');
     flames.forEach((f, i) => {
       setTimeout(() => {
@@ -552,6 +566,9 @@
   }
 
   function restartCake() {
+    if (currentState === 'cake') return; // Prevent double clicks
+    currentState = 'cake';
+
     document.getElementById('wish-section').classList.remove('visible');
     const flames = document.querySelectorAll('.candle-flame');
     flames.forEach(f => {
