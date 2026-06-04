@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday, Fasya 🌹</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Italiana&family=Jost:wght@300;400&display=swap" rel="stylesheet"/>
+
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- ========== PETALS BACKGROUND ========== -->
+  <div class="petals-container" id="petalsContainer"></div>
+
+  <!-- ========== SECTION 1: COUNTDOWN ========== -->
+  <section id="countdownSection" class="section active">
+    <div class="overlay-texture"></div>
+    <div class="countdown-content animate__animated animate__fadeIn">
+      <p class="pre-title">Menghitung hari menuju</p>
+      <h1 class="main-title">Fasya Syahira Amin</h1>
+      <div class="divider"><span>✦</span></div>
+      <p class="subtitle">Hari Istimewamu</p>
+      <div class="countdown-timer" id="countdownTimer">
+        <div class="time-block">
+          <span class="time-num" id="cd-days">00</span>
+          <span class="time-label">Hari</span>
+        </div>
+        <div class="time-sep">:</div>
+        <div class="time-block">
+          <span class="time-num" id="cd-hours">00</span>
+          <span class="time-label">Jam</span>
+        </div>
+        <div class="time-sep">:</div>
+        <div class="time-block">
+          <span class="time-num" id="cd-minutes">00</span>
+          <span class="time-label">Menit</span>
+        </div>
+        <div class="time-sep">:</div>
+        <div class="time-block">
+          <span class="time-num" id="cd-seconds">00</span>
+          <span class="time-label">Detik</span>
+        </div>
+      </div>
+      <p class="countdown-note">5 Juni 2025 &nbsp;·&nbsp; Hari yang paling indah</p>
+      
+    </div>
+  </section>
+
+  <!-- ========== SECTION 2: SELAMAT ULANG TAHUN ========== -->
+  <section id="birthdaySection" class="section hidden">
+    <div class="overlay-texture"></div>
+    <div class="stars-container" id="starsContainer"></div>
+    <div class="birthday-content">
+      <p class="pre-title animate__animated animate__fadeInDown">Selamat Ulang Tahun</p>
+      <h1 class="main-title big animate__animated animate__fadeInUp">Fasya<br/><em>Syahira Amin</em></h1>
+      <div class="divider animate__animated animate__zoomIn"><span>✦</span></div>
+      <p class="birthday-sub animate__animated animate__fadeIn">
+        Semoga hari ini menjadi awal dari babak baru<br/>yang penuh cinta, tawa, dan kebahagiaan tanpa batas.
+      </p>
+
+      <!-- SWIPE BUTTON -->
+      <div class="swipe-wrapper animate__animated animate__fadeInUp" id="swipeWrapper">
+        <p class="swipe-hint">Geser untuk Tiup Kue 🎂</p>
+        <div class="swipe-track" id="swipeTrack">
+          <div class="swipe-thumb" id="swipeThumb">
+            <span>🎂</span>
+          </div>
+          <span class="swipe-label" id="swipeLabel">Geser →</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SECTION 3: TIUP KUE ========== -->
+  <section id="cakeSection" class="section hidden">
+    <div class="overlay-texture"></div>
+    <div class="cake-content">
+      <p class="pre-title">Buat sebuah permohonan</p>
+      <h2 class="section-heading">Tiup Lilinnya, Sayang 🕯️</h2>
+      <div class="cake-scene" id="cakeScene">
+        <!-- Cake SVG -->
+        <div class="cake-wrap">
+          <svg class="cake-svg" viewBox="0 0 220 200" xmlns="http://www.w3.org/2000/svg">
+            <!-- Plate shadow -->
+            <ellipse cx="110" cy="185" rx="90" ry="8" fill="#d08090" opacity="0.2"/>
+            <!-- Bottom tier -->
+            <rect x="20" y="130" width="180" height="55" rx="12" fill="#EE6983"/>
+            <rect x="20" y="130" width="180" height="18" rx="4" fill="#F57F93"/>
+            <!-- Middle tier -->
+            <rect x="40" y="90" width="140" height="48" rx="10" fill="#FFC4C4"/>
+            <rect x="40" y="90" width="140" height="14" rx="4" fill="#FFD5D5"/>
+            <!-- Top tier -->
+            <rect x="60" y="58" width="100" height="40" rx="8" fill="#FCF5EE"/>
+            <rect x="60" y="58" width="100" height="12" rx="4" fill="#FFF0E8"/>
+            <!-- Frosting drips bottom -->
+            <path d="M25,130 Q35,118 45,130 Q55,118 65,130 Q75,118 85,130 Q95,118 105,130 Q115,118 125,130 Q135,118 145,130 Q155,118 165,130 Q175,118 185,130 Q195,118 200,130" stroke="#FCF5EE" stroke-width="6" fill="none" stroke-linecap="round"/>
+            <!-- Frosting drips middle -->
+            <path d="M44,90 Q52,80 60,90 Q70,80 80,90 Q90,80 100,90 Q110,80 120,90 Q130,80 140,90 Q150,80 160,90 Q170,80 176,90" stroke="#EE6983" stroke-width="5" fill="none" stroke-linecap="round"/>
+            <!-- Decorations -->
+            <circle cx="70" cy="108" r="4" fill="#850E35"/>
+            <circle cx="110" cy="105" r="4" fill="#850E35"/>
+            <circle cx="150" cy="108" r="4" fill="#850E35"/>
+            <circle cx="90" cy="72" r="3" fill="#EE6983"/>
+            <circle cx="130" cy="72" r="3" fill="#EE6983"/>
+            <!-- Hearts -->
+            <text x="96" y="115" font-size="12" fill="#FCF5EE">♥</text>
+            <text x="76" y="76" font-size="10" fill="#850E35">♥</text>
+          </svg>
+
+          <!-- Candles & Flames -->
+          <div class="candles" id="candlesEl">
+            <div class="candle-wrap c1"><div class="flame" id="flame1"></div><div class="candle"></div></div>
+            <div class="candle-wrap c2"><div class="flame" id="flame2"></div><div class="candle"></div></div>
+            <div class="candle-wrap c3"><div class="flame" id="flame3"></div><div class="candle"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MIC BUTTON -->
+      <div class="blow-area">
+        <p class="blow-hint" id="blowHint">Tekan & tiup ke mic untuk mematikan lilin!</p>
+        <button class="mic-btn" id="micBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+            <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+            <line x1="12" y1="19" x2="12" y2="23"/>
+            <line x1="8" y1="23" x2="16" y2="23"/>
+          </svg>
+          <span id="micLabel">Tahan & Tiup</span>
+        </button>
+        <p class="blow-alt" id="blowAlt">atau <button class="link-btn" id="manualBlowBtn">klik di sini</button> untuk tiup manual</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SECTION 4: SURAT CINTA ========== -->
+  <section id="letterSection" class="section hidden">
+    <div class="overlay-texture"></div>
+    <div class="letter-content animate__animated animate__fadeIn">
+      <p class="pre-title">Khusus untukmu</p>
+      <h2 class="section-heading">Surat dari Hatiku 💌</h2>
+
+      <!-- PHOTO FRAME -->
+      <div class="photo-frame-wrapper">
+        <div class="photo-frame" id="photoFrame">
+          <img src="mbg.jpeg" class="photo-preview" alt="Foto Fasya"/>
+        </div>
+        <div class="photo-deco photo-deco-1">✦</div>
+        <div class="photo-deco photo-deco-2">♥</div>
+        <div class="photo-deco photo-deco-3">✦</div>
+      </div>
+
+      <!-- LETTER BODY -->
+      <div class="letter-paper">
+        <div class="letter-inner">
+          <p class="letter-salutation">Untuk Fasya yang tercinta,</p>
+          <p class="letter-body">
+            Kalenderku menandai satu tanggal sebuah lingkaran merah. Memberiku pengumuman Bahwa Kekasihku ulang tahun hari ini.
+            Seperti merapalkan doa pelan-pelan Aku mulai menuliskan kalimat manis untuknya Selamat atas kelahiran yang terus berulang Sembilan Belas Kali, kekasihku.
+          </p>
+          <p class="letter-body">
+            Kue yang akan engkau terima nanti adalah puncak perayaanku. Doaku berlapis buttercream coklat yang tulus.
+            Harapanku menyala pada sumbu-sumbu lilin
+            Lalu terkabulkan, setelah engkau meniupnya.
+          </p>
+          <p class="letter-body">
+            Melalui hadiah kecil ini Aku titipkan cinta yang sederhana Semoga aku selalu bisa menuliskanmu Puisi ulang tahun setiap tanggalnya tiba.
+          </p>
+          <p class="letter-closing">Dengan sepenuh cinta,<br/><em>Yang selalu ada untukmu 🌹</em></p>
+        </div>
+      </div>
+
+      <div class="letter-footer">
+        <span>✦ &nbsp; Selamat Ulang Tahun ke-&nbsp;<strong>yang paling cantik</strong>&nbsp; ✦</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== POP UP SELAMAT ========== -->
+  <div class="popup-overlay hidden" id="popupOverlay">
+    <div class="popup-box animate__animated animate__zoomIn">
+      <div class="popup-deco">🎉</div>
+      <h2 class="popup-title">Selamat Ulang Tahun!</h2>
+      <div class="popup-divider"><span>✦</span></div>
+      <p class="popup-msg">
+        Semoga semua keinginanmu 
+        terkabul dan hari-harimu selalu dipenuhi kebahagiaan yang tiada akhir. 
+        Kamu adalah cahaya yang selalu menerangi hariku. 🌹
+      </p>
+      <button class="popup-btn" id="popupNextBtn">Baca Suratnya 💌</button>
+    </div>
+    <div class="confetti-container" id="confettiContainer"></div>
+  </div>
+
+  <!-- External JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
