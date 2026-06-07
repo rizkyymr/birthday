@@ -5,7 +5,7 @@
 /* ──────────────────────────────────────────
    CONFIG — ubah sesuai kebutuhan
 ────────────────────────────────────────── */
-const BIRTHDAY = { month: 6, day: 5 }; // Juni = 6, 5 Juni
+const BIRTHDAY = { month: 6, day: 5, year: 2026 }; // Juni = 6, 5 Juni 2026
 
 /* ──────────────────────────────────────────
    UTILITIES
@@ -72,7 +72,13 @@ function showSection(fromId, toId) {
 ────────────────────────────────────────── */
 function isBirthdayToday() {
   const now = new Date();
-  return now.getMonth() + 1 === BIRTHDAY.month && now.getDate() === BIRTHDAY.day;
+  return now.getMonth() + 1 === BIRTHDAY.month && now.getDate() === BIRTHDAY.day && now.getFullYear() === BIRTHDAY.year;
+}
+
+function hasBirthdayPassed() {
+  const now = new Date();
+  const eventDate = new Date(BIRTHDAY.year, BIRTHDAY.month - 1, BIRTHDAY.day, 23, 59, 59);
+  return now > eventDate;
 }
 
 function getNextBirthday() {
@@ -81,6 +87,13 @@ function getNextBirthday() {
   const bday = new Date(year, BIRTHDAY.month - 1, BIRTHDAY.day, 0, 0, 0);
   if (now >= bday) bday.setFullYear(year + 1);
   return bday;
+}
+
+function updateCountdownNote() {
+  const note = $('countdownNote');
+  if (!note) return;
+  const nextBirthday = getNextBirthday();
+  note.textContent = `${BIRTHDAY.day} Juni ${nextBirthday.getFullYear()} · Hari yang paling indah`;
 }
 
 function updateCountdown() {
@@ -97,14 +110,16 @@ function updateCountdown() {
 }
 
 function init() {
-  if (isBirthdayToday()) {
-    // Langsung ke section ulang tahun
+  updateCountdownNote();
+
+  if (isBirthdayToday() || hasBirthdayPassed()) {
+    // Langsung ke section ulang tahun pada tanggal ulang tahun asli atau setelahnya
     $('countdownSection').classList.remove('active');
     $('countdownSection').classList.add('hidden');
     $('birthdaySection').classList.remove('hidden');
     $('birthdaySection').classList.add('active');
   } else {
-    // Tampilkan countdown
+    // Tampilkan countdown untuk event yang belum tiba
     $('countdownSection').classList.add('active');
     updateCountdown();
     setInterval(updateCountdown, 1000);
